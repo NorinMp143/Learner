@@ -1,0 +1,18 @@
+<h2>Add Lesson</h2>
+<form action="/instructors/classes/{{class_id}}/lessons/new" id="regForm" method="post">
+  <div>
+    <label for="">Lesson Number: </label>
+    <input type="text" name="lesson_number">
+  </div>
+  <div>
+    <label for="">Lesson Title: </label>
+    <input type="text" name="lesson_title">
+  </div>
+  <div>
+    <label for="">Lesson Body: </label>
+    <textarea name="lesson_body"></textarea>
+  </div>
+  <div>
+    <input type="submit" value="Add Lesson">
+  </div>
+</form>

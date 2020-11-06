@@ -1,0 +1,24 @@
+<h2>{{class.title}}</h2>
+<p>
+  <strong>Instructor :</strong> {{class.instructor}}
+</p>
+<p>{{class.description}}</p>
+<ul class="alt">
+  {{#each class.lessons}}
+    <li>{{lesson_title}}</li>
+  {{/each}}
+</ul>
+{{#if user}}
+  {{#if registered}}
+  <a href="/{{type}}s/classes">Go to your Classes</a>
+  {{else}}
+  <form id="classRegForm" method="post" action="/{{type}}s/classes/register">
+  <input type="hidden" name="student_id" value="{{user._id}}">
+  <input type="hidden" name="class_id" value={{class._id}}>
+  <input type="hidden" name="class_title" value="{{class.title}}">
+  <input type="submit" value="Register For This Class" class="button">
+  </form>
+  {{/if}}
+{{else}}
+  <p>You must be logged in to register for this class.</p>
+{{/if}}
