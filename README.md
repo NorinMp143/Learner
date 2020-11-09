@@ -10,15 +10,15 @@ Installation
 first thing download the repo in your system, there is two way to do this
 1. Download the zip file and extract it
 2. you can clone this by given command (but make sure you have git installed)
-```
+```shell
 git clone https://github.com/NorinMp143/Learner.git
 ```
 after downloading the repo, now we need to download all packages. For that just open terminal or cmd and move to the project directory and then type below command
-```
+```shell
 npm install
 ```
 after this, you need to setup our database, follow these command given below
-```
+```shell
 // to start mongo shell
 $ mongo
 // to create database for our project type
@@ -27,20 +27,22 @@ $ mongo
 ```
 now we need to add data to our database so you can use my dump data or you can your own, let check one by one
 1. use my dump data
-```
+```shell
 //to restore my dump data use this command in your project directory
 mongorestore --db=learner database_files/learner/
 ```
 2. use your own data
 to use your own data, my project need three collections "classes", "instructors", "students", "users". To create these follow below commands
-```
+```shell
 //inside the mongo shell
 > db.createCollection( "users" )
 > db.createCollection( "classes" )
 > db.createCollection( "instructors" )
 > db.createCollection( "students" )
+```
 
 In "classes" collection,we have below structure of model
+```js
 {
   title:{
     type:String
@@ -57,7 +59,8 @@ In "classes" collection,we have below structure of model
     lesson_body:{type:String}
   }]
 }
-
+```
+```shell
 // insert your own data to classes
 > db.classes.insertMany([
    { title : "Intro to HTML", description : "HTML was developed with the intent of defining the structure of documents like headings, paragraphs, lists, and so forth to facilitate the sharing of scientific information between researchers. Now, HTML is being widely used to format web pages with the help of different tags available in HTML language.", instructor : "Madan Lal" }
